@@ -78,6 +78,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
   function removeSquaresEventListeners() {
     gridSquares.forEach((square) => square.removeEventListener('click', clickFunction))
+    gridSquares.forEach((square) => square.removeEventListener('click', clickFunctionTwo))
   }
 
   function playing() {
@@ -176,6 +177,7 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 
   // Check for victory and End Game 
+
   function gameWinner(winningSequence) {
     computerTwoTurnInterval.forEach((interval) => clearInterval(interval))
     winningSequence.forEach((square) => {
