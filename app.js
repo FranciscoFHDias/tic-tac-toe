@@ -2,7 +2,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
   const buttonStartGame = document.getElementById('start-game')
   const buttonWrapper = document.getElementById('button-wrapper')
-  const buttons = ['Player vs Player', 'Player vs Computer', 'Computer vs Computer', 'Reset']
+  const buttons = ['Player vs Player', 'Player vs Computer', 'Computer vs Player', 'Computer vs Computer', 'Reset']
   const gridWrapper = document.getElementById('grid-wrapper')
   const gameOverMessage = document.getElementById('gameOver-wrapper')
   const gridSquares = []
@@ -53,8 +53,9 @@ document.addEventListener('DOMContentLoaded', () => {
   function createButtonsEventListeners() {
     document.getElementById('button0').addEventListener('click', twoPlayer)
     document.getElementById('button1').addEventListener('click', onePlayer)
-    document.getElementById('button2').addEventListener('click', autoPlay)
-    document.getElementById('button3').addEventListener('click', resetGame)
+    document.getElementById('button2').addEventListener('click', onePlayerTwo)
+    document.getElementById('button3').addEventListener('click', autoPlay)
+    document.getElementById('button4').addEventListener('click', resetGame)
   }
 
   // Common logic
@@ -83,12 +84,14 @@ document.addEventListener('DOMContentLoaded', () => {
     document.getElementById('button0').style.display ='none'
     document.getElementById('button1').style.display ='none'
     document.getElementById('button2').style.display ='none'
+    document.getElementById('button3').style.display ='none'
   }
 
   function notPlaying() {
     document.getElementById('button0').style.display =''
     document.getElementById('button1').style.display =''
     document.getElementById('button2').style.display =''
+    document.getElementById('button3').style.display =''
   }
 
   // Player vs Player
@@ -150,6 +153,13 @@ document.addEventListener('DOMContentLoaded', () => {
         createSquaresEventListeners()
     }, 750)
   }
+
+  // Computer vs Player
+
+  function onePlayerTwo() {
+    playing()
+    opponentTurn()
+  } 
 
   // Computer vs Computer
 
