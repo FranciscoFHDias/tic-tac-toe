@@ -19,13 +19,9 @@ button {
   margin-right: 10px;
 }
 
-.gridWrapper {
-  display: flex;
-  flex-wrap: wrap;
-  height: 300px;
-  width: 300px;
+table {
+  text-align: center;
   margin: auto;
-  border: red 1px solid;
 }
 
 .gridSquare {
