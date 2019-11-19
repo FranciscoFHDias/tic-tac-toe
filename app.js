@@ -183,7 +183,6 @@ document.addEventListener('DOMContentLoaded', () => {
 
   function opponentChoice() { 
     if(emptySquares().length < 7) {
-      console.log(bestMove())
       if(bestMove().includes('04') && origBoard[8] === '') {
         return 8
       } else if (bestMove().includes('24') && origBoard[6] === '') {
